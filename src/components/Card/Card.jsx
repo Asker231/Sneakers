@@ -1,9 +1,12 @@
 import React from 'react'
 import style from './card.style.module.css';
 
-const Card = ({title,price,company,image,}) => {
+const Card = ({id,promo,isLiked,gender,title,price,company,image,hendler}) => {
   return (
-    <div className={style.card}>
+    <div onClick={()=>{
+      promo(id,title,image)
+      hendler(true)
+      }} className={style.card}>
             <div className={style.topSection}>
                 <h4>{title}</h4>
                 <span style={{color:"green"}}>{price}</span>
@@ -11,7 +14,8 @@ const Card = ({title,price,company,image,}) => {
             <span id={style.compName}>{company}</span>
             <div className={style.image}>
                 <img src={image} alt="image"/>
-            </div>    
+            </div>   
+            <div style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"start",fontWeight:"bold",color:"purple"}}>{gender}</div> 
     </div>
   )
 }

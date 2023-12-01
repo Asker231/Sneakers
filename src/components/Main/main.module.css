@@ -1,7 +1,7 @@
 .wrapVS{
     display: flex;
     flex-direction: column;
-    padding:20px;
+    padding:5px 20px;
     gap:40px;
 }
 .hstack{
@@ -9,10 +9,10 @@
     grid-template-columns: repeat(2,1fr);
     justify-content: space-between;
     width: 100%;
-
     align-items: center;
 
 }
+
 .hstack>h1{
     font-size: 60px;
     font-weight: 100;
@@ -21,7 +21,7 @@
 .vstakwrap{
     display: flex;
     flex-direction: column;
-
+    
     width: 100%;
     padding: 10px;
     padding-left: 24px;
@@ -53,5 +53,29 @@
     padding-top: 10px;
     flex-wrap: wrap;
     justify-content: start;
+    position: relative;
+    height: 700px;
+ overflow-y: scroll;
+ border-radius: 20px;
  
+}
+@media (max-width:430px) {
+    .hstack{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .wrap{
+        justify-content: center;
+    }
+    .vstakwrap{
+        padding-left: 0;
+
+    }
+  .vstakwrap{
+    align-items: center;
+  }
+  .hstack>h1{
+    font-size: 30px;
+    font-weight: 100;
+
+}
 }

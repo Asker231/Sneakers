@@ -24,6 +24,7 @@
 .leftnav>a{
     color: #777777;
     text-decoration: none;
+    transition: .5s;
 }
 .rightnav{
     width: 100%;
@@ -51,4 +52,10 @@
     left: 43px;
     top: -10px;
     color: red;
+}
+
+@media (max-width:430px) {
+  .wrap{
+    display: none;
+  }
 }

@@ -1,14 +1,23 @@
 import React from 'react'
 import style from './header.module.css'
-
+import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Header = () => {
+
+  const locationpage  = useLocation()
+
+  const styles = {
+    borderBottom : "0.5px solid black",
+    color:"black",
+  }
   return (
     <div className={style.header}>
         <div className={style.wrap}>
         <div className={style.leftnav}>
-            <a href="#">MEN</a>
-            <a href="#">WOMEN</a>
+            <Link style={locationpage.pathname == "/" ?  styles : null} to="/">MEN</Link>
+            <Link style={locationpage.pathname == "/womenPage" ?  styles : null}  to="/womenPage">WOMEN</Link>
+
             <a href="#">COLLECTIONS</a>
         </div>
         <div className={style.rightnav}>
