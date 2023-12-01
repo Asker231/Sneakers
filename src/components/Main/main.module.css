@@ -1,7 +1,7 @@
 .wrapVS{
     display: flex;
     flex-direction: column;
-    padding:5px 20px;
+    padding:5px 0px;
     gap:40px;
 }
 .hstack{
@@ -10,6 +10,7 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    padding:0px 20px;
 
 }
 
@@ -21,7 +22,6 @@
 .vstakwrap{
     display: flex;
     flex-direction: column;
-    
     width: 100%;
     padding: 10px;
     padding-left: 24px;
@@ -52,11 +52,12 @@
     gap: 13px;
     padding-top: 10px;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     position: relative;
     height: 700px;
- overflow-y: scroll;
- border-radius: 20px;
+    overflow-y: scroll;
+    padding-top: 100px;
+    border-radius: 20px;
  
 }
 @media (max-width:430px) {

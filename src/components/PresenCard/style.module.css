@@ -52,7 +52,6 @@
     
     border-radius: 10px;
     width: 900px;
-    height:80%;
     overflow: hidden;
     z-index: 3;
 }
@@ -66,7 +65,7 @@
     
 }
 .some>.wrap{
-    width: 900px;
+    min-width: 100%;
     height: 700px;
 }
 .wrap>img{
@@ -90,4 +89,23 @@
     padding:10px;
     border-radius: 50px;
     cursor: pointer;
+}
+
+@media (max-width:430px) {
+    .some>.wrap{
+        min-width: 100%;
+        height: 140px;
+    }
+    .wrap>img{
+        object-fit: contain;
+        width: 92%;
+        height: 77%;
+    }
+    .presentwrap{
+        top: 10;
+        left: 0;
+    }
+    .header>h2{
+        font-size: 20px;
+    }
 }

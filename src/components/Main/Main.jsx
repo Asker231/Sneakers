@@ -36,6 +36,8 @@ const Main = ({gender}) => {
     const locationPage = useLocation()
     const [isOpen,setOpen]  = React.useState()    
     const[obj,setObj] = React.useState()
+
+
     React.useEffect(()=>{
         setCard([
             {id:v4(),gender:"men",title:"AIR MAX 90",price:"$129",company:"NIKE SPORTSWEAR",image:a},
@@ -106,11 +108,12 @@ const Main = ({gender}) => {
                     </div>
                 </div>
             </div>
-            <div className={style.wrap}>
+            <div  className={style.wrap}>
             {
                 cards.map((el,ind)=>{
                       if(el.gender == gender){
                         return  <Card
+                        
                         hendler={(flag)=>setOpen(flag)}
                         key={ind}
                         id={el.id}
@@ -125,7 +128,7 @@ const Main = ({gender}) => {
                     })
               }       
             </div>  
-           { isOpen ? <PresenCard photos={[obj.photo,a1,a2,a3,a4]} title={obj.title} hendler={(flag)=>{
+           { isOpen ? <PresenCard  photos={[obj.photo,a1,a2,a3,a4]} title={obj.title} hendler={(flag)=>{
             return setOpen(flag)
            }}/>:null}
 
