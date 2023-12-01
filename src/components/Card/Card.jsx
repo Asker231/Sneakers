@@ -1,10 +1,10 @@
 import React from 'react'
 import style from './card.style.module.css';
 
-const Card = ({id,promo,isLiked,gender,title,price,company,image,hendler}) => {
+const Card = ({id,promo,gender,title,price,company,image,hendler}) => {
   return (
     <div onClick={()=>{
-      promo(id,title,image)
+      promo(id,title,image,gender)
       hendler(true)
       }} className={style.card}>
             <div className={style.topSection}>

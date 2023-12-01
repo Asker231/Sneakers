@@ -10,6 +10,8 @@ import Card from '../Card/Card.jsx'
 import { v4 } from 'uuid'
 import { useLocation } from 'react-router-dom'
 import PresenCard from '../PresenCard/PresenCard.jsx'
+import { useDispatch } from 'react-redux'
+import { addCard } from '../../store/slices/CardSlice.js'
 
 const Main = ({gender}) => {
     const[select,setSelect] = React.useState(1)
@@ -37,6 +39,9 @@ const Main = ({gender}) => {
     const [isOpen,setOpen]  = React.useState()    
     const[obj,setObj] = React.useState()
 
+
+
+    const dispatch = useDispatch()
 
     React.useEffect(()=>{
         setCard([
@@ -113,7 +118,6 @@ const Main = ({gender}) => {
                 cards.map((el,ind)=>{
                       if(el.gender == gender){
                         return  <Card
-                        
                         hendler={(flag)=>setOpen(flag)}
                         key={ind}
                         id={el.id}
@@ -122,13 +126,13 @@ const Main = ({gender}) => {
                         price={el.price} 
                         company={el.company} 
                         image={el.image}
-                        promo={(id,title,photo)=>setObj({id ,title,photo})}
+                        promo={(id,title,photo,gender)=>setObj({id ,title,photo,gender})}
                         /> 
                       }
                     })
               }       
             </div>  
-           { isOpen ? <PresenCard  photos={[obj.photo,a1,a2,a3,a4]} title={obj.title} hendler={(flag)=>{
+           { isOpen ? <PresenCard addCardHendler = {()=>dispatch(addCard({id:obj.id,title:obj.title,gender:obj.gender}))}  photos={[obj.photo,a1,a2,a3,a4]} title={obj.title} hendler={(flag)=>{
             return setOpen(flag)
            }}/>:null}
 

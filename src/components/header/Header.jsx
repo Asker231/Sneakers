@@ -2,10 +2,18 @@ import React from 'react'
 import style from './header.module.css'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import Cart from '../Cart/Cart'
 
 const Header = () => {
-
+  const[sneaks,setSneak] = React.useState([])
+  const selectors = useSelector(state => state.card.cards)
   const locationpage  = useLocation()
+  const[cart,setCart] = React.useState(false)
+
+  React.useEffect(()=>{
+    setSneak(selectors)
+  })
 
   const styles = {
     borderBottom : "0.5px solid black",
@@ -22,9 +30,12 @@ const Header = () => {
         </div>
         <div className={style.rightnav}>
             <a href="#">SEARCH</a>
-            <a href="#">CART<span className={style.items}>0</span></a>
+            <a onClick={()=>setCart(!cart)} href="#">CART<span className={style.items}>{sneaks.length}</span></a>
         </div>
         </div>
+        { cart ? <Cart headerState = {(flag)=>{
+         return setCart(flag)}}/> : null
+        }
     </div>
   )
 }

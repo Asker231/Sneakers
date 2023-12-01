@@ -5,7 +5,7 @@ import rightArrow from  '../../assets/rightArrow.svg'
 import exit from '../../assets/exit.svg'
 import like from '../../assets/like.svg'
 
-const PresenCard = ({idCard,title,photos,isLiked,hendler,styles}) => {
+const PresenCard = ({addCardHendler,idCard,title,photos,isLiked,hendler,styles}) => {
 
     let  [offset  ,setOffset]  =  React.useState(-1)
     const[changeLike,setLike]  =  React.useState(false)
@@ -25,7 +25,10 @@ const PresenCard = ({idCard,title,photos,isLiked,hendler,styles}) => {
             <button  id={style.exits} onClick={()=>hendler(false)}>
                     <img onClick={()=>hendler(false)}  src={exit}/>
             </button>
-            <button onClick={()=>setLike(!changeLike)} style={{backgroundColor: changeLike ? "red" : null}}  className={style.likes}>
+            <button onClick={()=>{
+                setLike(!changeLike)
+                addCardHendler()
+                }} style={{backgroundColor: changeLike ? "red" : null}}  className={style.likes}>
                     <img style={{fill:changeLike ? "white" : null}} src={like}/>
             </button>
             </div>
