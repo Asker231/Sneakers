@@ -1,0 +1,57 @@
+.wrapVS{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    gap:40px;
+}
+.hstack{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    width: 100%;
+
+    align-items: center;
+
+}
+.hstack>h1{
+    font-size: 60px;
+    font-weight: 100;
+
+}
+.vstakwrap{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 10px;
+    padding-left: 24px;
+
+}
+.topHS{
+ display: flex;
+ align-items: center;
+ width: 50%;
+ justify-content: space-around;
+ color: #6C6C6C;
+ padding-bottom:5px;
+ font-weight: 800;
+ border-bottom: 0.5px solid #6C6C6C;
+}
+.items{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 13px;
+
+}
+.wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+    gap: 13px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    justify-content: start;
+ 
+}
